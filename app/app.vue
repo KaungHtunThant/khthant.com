@@ -19,7 +19,7 @@
     <!-- Hero Section -->
     <section id="hero" class="pt-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600">
       <div class="container mx-auto px-6 text-center text-white">
-        <img src="/portrait.svg" alt="Portrait" class="w-64 h-64 rounded-full mx-auto mb-8 shadow-2xl border-8 border-white">
+        <img src="/portrait.svg" alt="Portrait of Kaung Htun Thant, Full Stack Developer" class="w-64 h-64 rounded-full mx-auto mb-8 shadow-2xl border-8 border-white">
         <h1 class="text-5xl font-bold mb-4">Kaung Htun Thant</h1>
         <p class="text-2xl mb-8">Full Stack Developer</p>
         <a href="#contact" @click.prevent="scrollToSection('contact')" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition cursor-pointer inline-block">Get In Touch</a>
@@ -221,6 +221,8 @@
 <script setup>
 import { ref } from 'vue'
 
+const NAVBAR_HEIGHT = 80 // Height offset for fixed navbar
+
 const form = ref({
   name: '',
   email: '',
@@ -233,9 +235,8 @@ const submitStatus = ref(null)
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId)
   if (element) {
-    const offset = 80 // navbar height
     const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - offset
+    const offsetPosition = elementPosition + window.pageYOffset - NAVBAR_HEIGHT
     
     window.scrollTo({
       top: offsetPosition,
