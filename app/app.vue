@@ -174,6 +174,18 @@
       </div>
     </section>
 
+    <!-- Floating scroll button -->
+    <button
+      @click="scrollNext"
+      :aria-label="isLastSection ? 'Scroll to top' : 'Scroll to next section'"
+      class="fixed bottom-6 right-6 z-40 w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-700 bg-white dark:bg-black hover:border-black dark:hover:border-white rounded transition-colors duration-300 cursor-pointer"
+    >
+      <span
+        class="text-base leading-none transition-transform duration-300"
+        :class="isLastSection ? 'rotate-180' : 'rotate-0'"
+      >↓</span>
+    </button>
+
     <!-- Footer -->
     <footer class="bg-black dark:bg-gray-950 text-white py-12 border-t border-gray-800">
       <div class="container mx-auto px-6">
@@ -204,7 +216,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const NAVBAR_HEIGHT = 80 // Height offset for fixed navbar
 
@@ -248,6 +260,29 @@ const projects = [
   }
 ]
 
+// Scroll-to-next / scroll-to-top floating button.
+const sectionIds = ['hero', 'about', 'services', 'projects', 'contact']
+const currentSectionIndex = ref(0)
+const isLastSection = computed(() => currentSectionIndex.value === sectionIds.length - 1)
+
+const updateCurrentSection = () => {
+  const mid = window.scrollY + window.innerHeight / 2
+  let closest = 0
+  let closestDist = Infinity
+  sectionIds.forEach((id, i) => {
+    const el = document.getElementById(id)
+    if (el) {
+      const dist = Math.abs(el.offsetTop + el.offsetHeight / 2 - mid)
+      if (dist < closestDist) { closestDist = dist; closest = i }
+    }
+  })
+  currentSectionIndex.value = closest
+}
+
+const scrollNext = () => {
+  scrollToSection(isLastSection.value ? sectionIds[0] : sectionIds[currentSectionIndex.value + 1])
+}
+
 // Theme toggle — light-first, persisted, system-aware.
 const isDark = ref(false)
 
@@ -262,8 +297,13 @@ const toggleTheme = () => {
 }
 
 onMounted(() => {
-  // Sync ref with the class already applied by the no-flash head script.
   isDark.value = document.documentElement.classList.contains('dark')
+  window.addEventListener('scroll', updateCurrentSection, { passive: true })
+  updateCurrentSection()
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateCurrentSection)
 })
 
 const scrollToSection = (sectionId) => {
