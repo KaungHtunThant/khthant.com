@@ -32,7 +32,7 @@
       <div class="container mx-auto px-6 text-center">
         <img src="/portrait.svg" alt="Portrait of Kaung Htun Thant, Full Stack Developer" class="w-56 h-56 rounded-full mx-auto mb-8 grayscale border-2 border-black dark:border-white">
         <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-4">$ whoami</p>
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
+        <h1 class="text-[clamp(1.6rem,5.5vw,4.5rem)] font-bold mb-4 tracking-tight whitespace-nowrap">
           Kaung Htun Thant<span class="font-mono text-gray-400 dark:text-gray-600 animate-blink">_</span>
         </h1>
         <p class="font-mono text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-10">Full Stack Developer</p>
@@ -99,8 +99,10 @@
               <span class="font-mono text-4xl text-white dark:text-black">{{ String(index + 1).padStart(2, '0') }}</span>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2 font-mono">{{ project.title }}</h3>
-              <p class="text-gray-600 dark:text-gray-400 mb-4">{{ project.description }}</p>
+              <h3 class="text-xl font-bold mb-1 font-mono">{{ project.title }}</h3>
+              <p class="font-mono text-xs text-gray-500 dark:text-gray-400 mb-1">{{ project.role }}</p>
+              <p class="font-mono text-xs text-gray-400 dark:text-gray-600 mb-4">{{ project.period }}</p>
+              <p v-if="project.description" class="text-gray-600 dark:text-gray-400 mb-4">{{ project.description }}</p>
               <div class="flex flex-wrap gap-2">
                 <span
                   v-for="tag in project.tags"
@@ -180,6 +182,7 @@
             <h3 class="text-xl font-mono font-bold mb-4"><span class="text-gray-600">~/</span>kh_thant</h3>
             <p class="text-gray-400 mb-4">Full Stack Developer passionate about creating amazing web experiences.</p>
             <p class="text-gray-400 font-mono text-sm">email: <a href="mailto:kaunghtunthant@gmail.com" class="text-white hover:underline">kaunghtunthant@gmail.com</a></p>
+            <p class="text-gray-400 font-mono text-sm mt-1">phone: <a href="tel:+971555762591" class="text-white hover:underline">+971 55 576 2591</a></p>
           </div>
           <div>
             <h3 class="text-lg font-mono font-bold mb-4">quick_links</h3>
@@ -214,27 +217,34 @@ const form = ref({
 const isSubmitting = ref(false)
 const submitStatus = ref(null)
 
-// Sample projects — replace with real work later.
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard.',
-    tags: ['Vue.js', 'Node.js', 'MongoDB']
+    title: 'Nokta CRM',
+    description: '',
+    role: 'Full Stack @ Nokta Clinic',
+    period: '2024 – Present',
+    tags: ['Laravel', 'Vue.js']
   },
   {
-    title: 'Analytics Dashboard',
-    description: 'Real-time analytics dashboard with interactive charts and data visualization capabilities.',
-    tags: ['Nuxt.js', 'Chart.js', 'Express']
+    title: 'iDiamond.ae',
+    description: '',
+    role: 'Part-time Backend Developer @ iDiamond',
+    period: '2024 – 2025',
+    tags: ['Laravel']
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
-    tags: ['Vue 3', 'Firebase', 'Tailwind']
+    title: 'Silver Sea Expo Event Management System',
+    description: '',
+    role: 'Full Stack @ Power Global Co. Ltd.',
+    period: '2023 – 2024',
+    tags: ['Laravel']
   },
   {
-    title: 'Blog Platform',
-    description: 'A modern blogging platform with markdown support, SEO optimization, and content management system.',
-    tags: ['Nuxt.js', 'Strapi', 'PostgreSQL']
+    title: 'KBTC School Management System',
+    description: '',
+    role: 'Full Stack @ KBTC Group of Companies',
+    period: '2022 – 2023',
+    tags: ['Laravel']
   }
 ]
 
