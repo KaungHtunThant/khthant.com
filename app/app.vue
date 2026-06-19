@@ -46,14 +46,8 @@
         <p class="font-mono text-sm text-gray-400 dark:text-gray-600 text-center mb-2">// about</p>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
         <div class="max-w-3xl mx-auto">
-          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-            Hello! I'm Kaung Htun Thant, a passionate full-stack developer with expertise in building modern web applications.
-            I love creating elegant solutions to complex problems and am always eager to learn new technologies.
-          </p>
           <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            With a strong foundation in both frontend and backend development, I specialize in creating responsive,
-            user-friendly applications that deliver exceptional user experiences. I'm dedicated to writing clean,
-            maintainable code and following best practices.
+            Results-driven Software Engineer with extensive experience in the startup ecosystem, specializing in building high-performance internal tools and scalable web solutions. Expert in the Laravel/Vue ecosystem, with a proven track record of spearheading projects from concept to deployment. Adept at acting as a technical advisor for early-stage companies, bridging the gap between complex business requirements and efficient, user-centric code.
           </p>
         </div>
       </div>
