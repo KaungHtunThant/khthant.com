@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="pt-20 min-h-screen flex items-center justify-center bg-white dark:bg-black">
     <div class="container mx-auto px-6 text-center">
-      <img src="/portrait.jpg" alt="Portrait of Kaung Htun Thant, Full Stack Developer" class="w-56 h-56 rounded-full mx-auto mb-8 object-cover grayscale border-2 border-black dark:border-white">
+      <img src="/portrait.jpg" alt="Portrait of Kaung Htun Thant, Full Stack Developer" class="w-56 h-56 rounded-full mx-auto mb-8 object-cover object-top grayscale border-2 border-black dark:border-white">
       <p class="font-mono text-sm text-gray-500 dark:text-gray-400 mb-4">$ whoami</p>
       <h1 class="text-[clamp(1.6rem,5.5vw,4.5rem)] font-bold mb-4 tracking-tight whitespace-nowrap">
         Kaung Htun Thant<span class="font-mono text-gray-400 dark:text-gray-600 animate-blink">_</span>
