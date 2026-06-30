@@ -7,7 +7,15 @@
         Kaung Htun Thant<span class="font-mono text-gray-400 dark:text-gray-600 animate-blink">_</span>
       </h1>
       <p class="font-mono text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-10">Full Stack Developer</p>
-      <BaseButton class="px-8 py-3" @click="scrollToSection('contact')">get_in_touch()</BaseButton>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <BaseButton class="px-8 py-3" @click="scrollToSection('contact')">get_in_touch()</BaseButton>
+        <BaseButton
+          variant="outline"
+          href="/Kaung-Htun-Thant-CV.pdf"
+          download
+          class="px-8 py-3"
+        >download_cv()</BaseButton>
+      </div>
     </div>
   </section>
 </template>

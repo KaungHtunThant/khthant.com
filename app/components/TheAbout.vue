@@ -5,7 +5,7 @@
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
       <div class="max-w-3xl mx-auto">
         <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-center md:text-left">
-          Results-driven Software Engineer with extensive experience in the startup ecosystem, specializing in building high-performance internal tools and scalable web solutions. Expert in the Laravel/Vue ecosystem, with a proven track record of spearheading projects from concept to deployment. Adept at acting as a technical advisor for early-stage companies, bridging the gap between complex business requirements and efficient, user-centric code.
+          Fullstack developer with ~7 years building production web apps for startups in Myanmar and the UAE. Specializes in the Laravel / Vue ecosystem and owns projects end to end: database design, API architecture, AWS infrastructure, and deployment. A dependable bridge between messy business requirements and clean, scalable code, with a track record of leading projects and advising early-stage teams.
         </p>
       </div>
     </div>

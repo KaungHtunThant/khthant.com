@@ -47,12 +47,21 @@
 
       <!-- Links -->
       <section v-if="hasLinks" class="flex flex-wrap gap-3">
-        <a v-if="project.links?.live" :href="project.links.live" target="_blank" rel="noopener noreferrer">
-          <BaseButton class="px-6 py-2">live_demo ↗</BaseButton>
-        </a>
-        <a v-if="project.links?.source" :href="project.links.source" target="_blank" rel="noopener noreferrer">
-          <BaseButton class="px-6 py-2">source ↗</BaseButton>
-        </a>
+        <BaseButton
+          v-if="project.links?.live"
+          :href="project.links.live"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-2"
+        >live_demo ↗</BaseButton>
+        <BaseButton
+          v-if="project.links?.source"
+          :href="project.links.source"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+          class="px-6 py-2"
+        >source ↗</BaseButton>
       </section>
     </template>
   </BaseModal>
