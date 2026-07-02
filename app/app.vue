@@ -78,5 +78,8 @@ useHead({
 <style>
 html {
   scroll-behavior: smooth;
+  /* Always reserve the scrollbar's space so opening the modal (which sets
+     overflow:hidden) frees no width and nothing reflows — page or fixed navbar. */
+  scrollbar-gutter: stable;
 }
 </style>

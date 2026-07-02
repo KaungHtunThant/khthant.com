@@ -4,8 +4,22 @@
     @click="$emit('select')"
     class="group w-full text-left rounded border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-black hover:border-black dark:hover:border-white focus:outline-none focus-visible:border-black dark:focus-visible:border-white transition cursor-pointer"
   >
-    <div class="h-40 bg-black dark:bg-white flex items-center justify-center">
-      <span class="font-mono text-4xl text-white dark:text-black">{{ number }}</span>
+    <div class="h-40 relative overflow-hidden bg-gray-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+      <!-- Real screenshot when a project has one; drop `cover: '/path.webp'`
+           into the project data and it renders here automatically. -->
+      <BaseImage
+        v-if="project.cover"
+        :src="project.cover"
+        :alt="`${project.title} preview`"
+        class="h-full w-full"
+        img-class="object-cover object-top"
+      />
+      <!-- Terminal-motif placeholder until a screenshot exists. Decorative:
+           the title lives in the card body below. -->
+      <div v-else class="absolute inset-0 p-4 flex flex-col justify-between font-mono" aria-hidden="true">
+        <p class="text-xs text-gray-500 dark:text-gray-500">$ cat {{ slug }}/README.md</p>
+        <span class="self-end text-6xl font-bold leading-none text-gray-200 dark:text-gray-800">{{ number }}</span>
+      </div>
     </div>
     <div class="p-6">
       <h3 class="text-xl font-bold mb-1 font-mono">{{ project.title }}</h3>
@@ -38,4 +52,12 @@ defineEmits(['select'])
 
 // Zero-padded ordinal shown on the card cover, e.g. "01".
 const number = computed(() => String(props.index + 1).padStart(2, '0'))
+
+// URL-ish slug for the terminal-style cover prompt, e.g. "nokta-crm-emr".
+const slug = computed(() =>
+  (props.project?.title || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+)
 </script>

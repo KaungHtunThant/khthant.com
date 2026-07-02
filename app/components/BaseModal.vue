@@ -55,6 +55,9 @@ const closeButton = ref(null)
 // Remember what was focused before opening, to restore it on close.
 let previouslyFocused = null
 
+// The page reserves a stable scrollbar gutter (see the global html style), so
+// hiding overflow here frees no width — nothing reflows, including the fixed
+// navbar. Just toggle the scroll lock.
 const lockBodyScroll = (locked) => {
   document.documentElement.style.overflow = locked ? 'hidden' : ''
 }

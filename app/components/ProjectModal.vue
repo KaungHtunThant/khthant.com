@@ -63,6 +63,8 @@
           class="px-6 py-2"
         >source ↗</BaseButton>
       </section>
+      <!-- No public links: mark the absence as intentional rather than missing. -->
+      <p v-else class="font-mono text-xs text-gray-500 dark:text-gray-500">[ private / client work ]</p>
     </template>
   </BaseModal>
 </template>
