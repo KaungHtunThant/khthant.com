@@ -5,6 +5,11 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
+      meta: [
+        { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#000000', media: '(prefers-color-scheme: dark)' },
+      ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico' },
