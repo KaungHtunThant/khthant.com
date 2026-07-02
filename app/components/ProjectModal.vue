@@ -2,20 +2,20 @@
   <BaseModal :open="open" labelledby="project-modal-title" @close="$emit('close')">
     <template v-if="project">
       <!-- Header -->
-      <p class="font-mono text-sm text-gray-400 dark:text-gray-600 mb-2">$ cat {{ slug }}/README.md</p>
+      <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-2">$ cat {{ slug }}/README.md</p>
       <h3 id="project-modal-title" class="text-2xl font-bold font-mono mb-1 pr-20">{{ project.title }}</h3>
       <p class="font-mono text-xs text-gray-500 dark:text-gray-400">{{ project.role }}</p>
-      <p class="font-mono text-xs text-gray-400 dark:text-gray-600 mb-6">{{ project.period }}</p>
+      <p class="font-mono text-xs text-gray-500 dark:text-gray-500 mb-6">{{ project.period }}</p>
 
       <!-- Purpose -->
       <section v-if="project.purpose" class="mb-8">
-        <p class="font-mono text-sm text-gray-400 dark:text-gray-600 mb-2">// purpose</p>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{{ project.purpose }}</p>
+        <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-2">// purpose</p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{{ project.purpose }}</p>
       </section>
 
       <!-- Stack breakdown -->
       <section v-if="stackGroups.length" class="mb-8">
-        <p class="font-mono text-sm text-gray-400 dark:text-gray-600 mb-3">// stack</p>
+        <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-3">// stack</p>
         <div class="space-y-3">
           <div v-for="group in stackGroups" :key="group.label" class="flex flex-col sm:flex-row sm:items-center gap-2">
             <span class="font-mono text-xs text-gray-500 dark:text-gray-400 sm:w-24 shrink-0">{{ group.label }}:</span>
@@ -23,7 +23,7 @@
               <span
                 v-for="tech in group.items"
                 :key="tech"
-                class="font-mono text-xs border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 px-3 py-1 rounded"
+                class="font-mono text-xs border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded"
               >[{{ tech }}]</span>
             </div>
           </div>
@@ -32,14 +32,14 @@
 
       <!-- Key features -->
       <section v-if="project.features?.length" class="mb-8">
-        <p class="font-mono text-sm text-gray-400 dark:text-gray-600 mb-3">// features</p>
+        <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-3">// features</p>
         <ul class="space-y-2">
           <li
             v-for="feature in project.features"
             :key="feature"
-            class="text-gray-600 dark:text-gray-400 flex gap-2"
+            class="text-gray-700 dark:text-gray-300 flex gap-2"
           >
-            <span class="font-mono text-gray-400 dark:text-gray-600 shrink-0">&gt;</span>
+            <span class="font-mono text-gray-500 dark:text-gray-500 shrink-0">&gt;</span>
             <span>{{ feature }}</span>
           </li>
         </ul>

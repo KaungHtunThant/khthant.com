@@ -1,8 +1,8 @@
 <template>
-  <section id="services" class="py-24 bg-white dark:bg-black">
+  <section id="services" aria-labelledby="services-title" class="py-24 bg-white dark:bg-black">
     <div class="container mx-auto px-6">
-      <p class="font-mono text-sm text-gray-400 dark:text-gray-600 text-center mb-2">// services</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
+      <p class="font-mono text-sm text-gray-500 dark:text-gray-500 text-center mb-2">// services</p>
+      <h2 id="services-title" class="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <ServiceCard
           v-for="service in services"

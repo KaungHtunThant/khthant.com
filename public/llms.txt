@@ -1,0 +1,18 @@
+# Kaung Htun Thant
+
+> Personal portfolio of Kaung Htun Thant, a Full Stack Developer with ~7 years of experience building production web apps for startups in Myanmar and the UAE. Specializes in the Laravel / Vue ecosystem and AWS infrastructure, owning projects end to end: database design, API architecture, infrastructure, and deployment.
+
+Currently a Senior Fullstack Developer at Nokta Software Development (UAE). Offers web design, web development, and performance optimization services.
+
+## Projects
+
+- [Nokta CRM + EMR](https://www.khthant.com/#projects): Custom CRM + EMR platform (Laravel, Vue.js, AWS) that replaced Bitrix and serves ~60 simultaneous sales, admin, and clinic staff across the UAE and Turkey. Led end-to-end as project lead and business analyst.
+- [iDiamond E-commerce](https://idiamond.ae): E-commerce backend (Laravel, AWS S3) with payment logic for 5 methods including Apple Pay, Samsung Pay, and Google Pay.
+- [Event Management System](https://www.khthant.com/#projects): Myanmar's first event management system (Laravel, MySQL), deployed at major expos handling 10,000+ attendees per day with QR-coded entry passes and instant card printing.
+- [School Management System](https://www.khthant.com/#projects): Complete school management system (Laravel, Azure AD SSO) onboarding 1,000+ students per term, with automated QR ID cards and an incident management system.
+
+## Contact
+
+- [Email](mailto:kaunghtunthant@gmail.com): kaunghtunthant@gmail.com
+- [Website](https://www.khthant.com/): https://www.khthant.com/
+- [CV (PDF)](https://www.khthant.com/Kaung-Htun-Thant-CV.pdf): Full curriculum vitae

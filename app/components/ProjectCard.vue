@@ -10,16 +10,16 @@
     <div class="p-6">
       <h3 class="text-xl font-bold mb-1 font-mono">{{ project.title }}</h3>
       <p class="font-mono text-xs text-gray-500 dark:text-gray-400 mb-1">{{ project.role }}</p>
-      <p class="font-mono text-xs text-gray-400 dark:text-gray-600 mb-4">{{ project.period }}</p>
-      <p v-if="project.description" class="text-gray-600 dark:text-gray-400 mb-4">{{ project.description }}</p>
+      <p class="font-mono text-xs text-gray-500 dark:text-gray-500 mb-4">{{ project.period }}</p>
+      <p v-if="project.description" class="text-gray-700 dark:text-gray-300 mb-4">{{ project.description }}</p>
       <div class="flex flex-wrap gap-2 mb-4">
         <span
           v-for="tag in project.tags"
           :key="tag"
-          class="font-mono text-xs border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 px-3 py-1 rounded"
+          class="font-mono text-xs border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded"
         >[{{ tag }}]</span>
       </div>
-      <p class="font-mono text-xs text-gray-400 dark:text-gray-600 group-hover:text-black dark:group-hover:text-white transition">
+      <p class="font-mono text-xs text-gray-500 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition">
         view_details()
       </p>
     </div>

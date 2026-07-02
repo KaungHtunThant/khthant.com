@@ -1,10 +1,10 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-black/90 backdrop-blur border-b border-gray-200 dark:border-gray-800 z-50">
+  <nav aria-label="Primary" class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-black/90 backdrop-blur border-b border-gray-200 dark:border-gray-800 z-50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <h1 class="text-xl font-mono font-bold tracking-tight">
-          <span class="text-gray-400 dark:text-gray-600">~/</span>kh_thant
-        </h1>
+        <span class="text-xl font-mono font-bold tracking-tight">
+          <span class="text-gray-500 dark:text-gray-500">~/</span>kh_thant
+        </span>
         <div class="flex items-center space-x-6">
           <ul class="hidden md:flex space-x-6 text-sm font-mono text-gray-500 dark:text-gray-400">
             <li v-for="link in navLinks" :key="link.id">

@@ -1,8 +1,8 @@
 <template>
-  <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800">
+  <section id="projects" aria-labelledby="projects-title" class="py-24 bg-gray-50 dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-6">
-      <p class="font-mono text-sm text-gray-400 dark:text-gray-600 text-center mb-2">// projects</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
+      <p class="font-mono text-sm text-gray-500 dark:text-gray-500 text-center mb-2">// projects</p>
+      <h2 id="projects-title" class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <ProjectCard
           v-for="(project, index) in projects"

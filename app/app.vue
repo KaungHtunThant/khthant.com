@@ -1,11 +1,17 @@
 <template>
   <div class="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 font-mono text-sm rounded bg-black text-white dark:bg-white dark:text-black"
+    >Skip to main content</a>
     <TheNavbar />
-    <TheHero />
-    <TheAbout />
-    <TheServices />
-    <TheProjects />
-    <TheContact />
+    <main id="main">
+      <TheHero />
+      <TheAbout />
+      <TheServices />
+      <TheProjects />
+      <TheContact />
+    </main>
     <TheScrollButton />
     <TheMobileDock />
     <TheFooter />
@@ -17,8 +23,26 @@ import { onMounted } from 'vue'
 
 const { initTheme } = useTheme()
 
+// Load gtag.js once the browser is idle so analytics doesn't compete with
+// first paint. Pageviews still fire on every visit, just slightly later.
+function loadAnalytics() {
+  window.dataLayer = window.dataLayer || []
+  function gtag() { window.dataLayer.push(arguments) }
+  gtag('js', new Date())
+  gtag('config', 'G-5E1JN7GFFB')
+  const s = document.createElement('script')
+  s.async = true
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5E1JN7GFFB'
+  document.head.appendChild(s)
+}
+
 onMounted(() => {
   initTheme()
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadAnalytics, { timeout: 3000 })
+  } else {
+    setTimeout(loadAnalytics, 2000)
+  }
 })
 
 useSeoMeta({
@@ -57,17 +81,6 @@ useHead({
         url: 'https://www.khthant.com/',
         image: 'https://www.khthant.com/portrait.webp',
       }),
-    },
-    // Google tag (gtag.js)
-    {
-      async: true,
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-5E1JN7GFFB',
-    },
-    {
-      innerHTML: `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-5E1JN7GFFB');`,
     },
   ],
 })

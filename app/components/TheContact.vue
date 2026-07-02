@@ -1,8 +1,8 @@
 <template>
-  <section id="contact" class="py-24 bg-white dark:bg-black">
+  <section id="contact" aria-labelledby="contact-title" class="py-24 bg-white dark:bg-black">
     <div class="container mx-auto px-6">
-      <p class="font-mono text-sm text-gray-400 dark:text-gray-600 text-center mb-2">// contact</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Get In Touch</h2>
+      <p class="font-mono text-sm text-gray-500 dark:text-gray-500 text-center mb-2">// contact</p>
+      <h2 id="contact-title" class="text-3xl md:text-4xl font-bold text-center mb-12">Get In Touch</h2>
       <div class="max-w-2xl mx-auto">
         <form @submit.prevent="handleSubmit" class="p-8 rounded border border-gray-200 dark:border-gray-800">
           <div v-if="submitStatus === 'success'" class="mb-6 p-4 border border-black dark:border-white font-mono text-sm rounded">
