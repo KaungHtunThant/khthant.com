@@ -37,6 +37,7 @@ useSeoMeta({
   twitterDescription: 'Full Stack Developer with ~7 years building production web apps for startups in Myanmar and the UAE, specializing in the Laravel / Vue ecosystem and AWS infrastructure.',
   twitterImage: 'https://www.khthant.com/portrait.jpg',
   robots: 'index, follow',
+  'google-site-verification': '0fe_tw-sla7ze7g0V8Bw_aGg0V1G7qtmitf7Onc5eYk',
 })
 
 useHead({
