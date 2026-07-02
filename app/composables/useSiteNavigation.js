@@ -5,6 +5,7 @@ const NAVBAR_HEIGHT = 80 // Offset for the fixed navbar.
 const navLinks = [
   { id: 'hero', label: 'home' },
   { id: 'about', label: 'about' },
+  { id: 'skills', label: 'skills' },
   { id: 'services', label: 'services' },
   { id: 'projects', label: 'projects' },
   { id: 'contact', label: 'contact' },

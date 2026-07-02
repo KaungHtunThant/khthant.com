@@ -17,6 +17,14 @@
           <BaseButton type="submit" block :disabled="isSubmitting">
             {{ isSubmitting ? 'sending...' : 'send_message()' }}
           </BaseButton>
+          <p class="mt-4 text-center font-mono text-sm text-gray-500 dark:text-gray-400">
+            or
+            <a
+              href="mailto:kaunghtunthant@gmail.com"
+              class="text-black dark:text-white hover:underline"
+              @click="trackEvent('mailto_click')"
+            >email me directly →</a>
+          </p>
         </form>
       </div>
     </div>
