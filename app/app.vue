@@ -58,6 +58,17 @@ useHead({
         image: 'https://www.khthant.com/portrait.jpg',
       }),
     },
+    // Google tag (gtag.js)
+    {
+      async: true,
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-5E1JN7GFFB',
+    },
+    {
+      innerHTML: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5E1JN7GFFB');`,
+    },
   ],
 })
 </script>
