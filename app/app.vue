@@ -26,7 +26,7 @@ useSeoMeta({
   description: 'Kaung Htun Thant is a Full Stack Developer with ~7 years building production web apps for startups in Myanmar and the UAE, specializing in the Laravel / Vue ecosystem and AWS infrastructure.',
   ogTitle: 'Kaung Htun Thant — Full Stack Developer',
   ogDescription: 'Full Stack Developer with ~7 years building production web apps for startups in Myanmar and the UAE, specializing in the Laravel / Vue ecosystem and AWS infrastructure.',
-  ogImage: 'https://www.khthant.com/portrait.jpg',
+  ogImage: 'https://www.khthant.com/portrait.webp',
   ogImageAlt: 'Portrait of Kaung Htun Thant',
   ogUrl: 'https://www.khthant.com/',
   ogType: 'website',
@@ -35,7 +35,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Kaung Htun Thant — Full Stack Developer',
   twitterDescription: 'Full Stack Developer with ~7 years building production web apps for startups in Myanmar and the UAE, specializing in the Laravel / Vue ecosystem and AWS infrastructure.',
-  twitterImage: 'https://www.khthant.com/portrait.jpg',
+  twitterImage: 'https://www.khthant.com/portrait.webp',
   robots: 'index, follow',
   'google-site-verification': '0fe_tw-sla7ze7g0V8Bw_aGg0V1G7qtmitf7Onc5eYk',
 })
@@ -55,7 +55,7 @@ useHead({
         email: 'mailto:kaunghtunthant@gmail.com',
         telephone: '+971555762591',
         url: 'https://www.khthant.com/',
-        image: 'https://www.khthant.com/portrait.jpg',
+        image: 'https://www.khthant.com/portrait.webp',
       }),
     },
     // Google tag (gtag.js)

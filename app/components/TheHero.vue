@@ -2,7 +2,7 @@
   <section id="hero" class="pt-20 min-h-screen flex items-center justify-center bg-white dark:bg-black">
     <div class="container mx-auto px-6 text-center">
       <BaseImage
-        src="/portrait.jpg"
+        src="/portrait.webp"
         alt="Portrait of Kaung Htun Thant, Full Stack Developer"
         icon="user"
         class="w-56 h-56 rounded-full mx-auto mb-8 border-2 border-black dark:border-white"
