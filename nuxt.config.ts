@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/fonts.css'],
+  // Inline the (small) CSS into the prerendered HTML so first paint isn't
+  // blocked on a separate stylesheet request.
+  features: { inlineStyles: true },
   routeRules: {
     // Static HTML for the single page; /api/* stays a runtime function.
     '/': { prerender: true },
