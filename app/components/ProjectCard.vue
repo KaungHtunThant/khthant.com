@@ -23,10 +23,10 @@
     </div>
     <div class="p-6">
       <h3 class="text-xl font-bold mb-1 font-mono">{{ project.title }}</h3>
-      <p class="font-mono text-xs text-gray-500 dark:text-gray-400 mb-1">{{ project.role }}</p>
-      <p class="font-mono text-xs text-gray-500 dark:text-gray-500 mb-4">{{ project.period }}</p>
+      <p v-if="project.role" class="font-mono text-xs text-gray-500 dark:text-gray-400 mb-1">{{ project.role }}</p>
+      <p v-if="project.period" class="font-mono text-xs text-gray-500 dark:text-gray-500 mb-4">{{ project.period }}</p>
       <p v-if="project.description" class="text-gray-700 dark:text-gray-300 mb-4">{{ project.description }}</p>
-      <div class="flex flex-wrap gap-2 mb-4">
+      <div v-if="project.tags?.length" class="flex flex-wrap gap-2 mb-4">
         <span
           v-for="tag in project.tags"
           :key="tag"

@@ -5,12 +5,20 @@
       <h2 id="projects-title" class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <ProjectCard
-          v-for="(project, index) in projects"
+          v-for="(project, index) in visibleProjects"
           :key="project.title"
           :project="project"
           :index="index"
           @select="selectedProject = project"
         />
+      </div>
+      <div v-if="projects.length > INITIAL_COUNT" class="mt-10 text-center">
+        <BaseButton
+          variant="outline"
+          class="px-8 py-3"
+          :aria-expanded="showAll"
+          @click="showAll = !showAll"
+        >{{ showAll ? 'show_less()' : `show_more() // +${projects.length - INITIAL_COUNT}` }}</BaseButton>
       </div>
     </div>
 
@@ -23,9 +31,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const selectedProject = ref(null)
+
+// Show the first N projects up front; the rest expand behind "show more".
+const INITIAL_COUNT = 4
+const showAll = ref(false)
+const visibleProjects = computed(() =>
+  showAll.value ? projects : projects.slice(0, INITIAL_COUNT)
+)
 
 // Project details sourced from CV. `links` render only when a URL is present.
 const projects = [
@@ -126,6 +141,99 @@ const projects = [
       'Bulk XLSX/CSV import/export for fast onboarding and data migration',
     ],
     links: { live: '', source: '' },
+  },
+
+  // --- Newer projects: title/tags/live links inferred; fill in the empty
+  // fields (role, period, purpose, stack, features, metrics) with real details.
+  {
+    title: 'KBTC Group Website',
+    description: '', role: 'Fullstack Developer @ KBTC Group of Companies', period: '',
+    tags: ['Website'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://www.kbtc.edu.mm', source: '' },
+  },
+  {
+    title: 'KBTC Moodle LMS',
+    description: '', role: 'Fullstack Developer @ KBTC Group of Companies', period: '',
+    tags: ['Moodle', 'LMS'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://moodle.kbtc.edu.mm', source: '' },
+  },
+  {
+    title: 'SingLottery',
+    description: '', role: 'Fullstack Developer @ Freelance', period: '',
+    tags: ['Web App'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: '', source: '' },
+  },
+  {
+    title: 'Incident Management System',
+    description: '', role: 'Fullstack Developer @ KBTC Group of Companies', period: '',
+    tags: ['Web App'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: '', source: '' },
+  },
+  {
+    title: 'Wedding Landing & RSVP',
+    description: '', role: 'Fullstack Developer @ Freelance', period: '',
+    tags: ['Landing Page'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: '', source: '' },
+  },
+  {
+    title: 'Power Global — Company Landing',
+    description: '', role: 'Fullstack Developer @ Power Global Co., Ltd.', period: '',
+    tags: ['Landing Page'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: '', source: '' },
+  },
+  {
+    title: 'Institute of Vocational Training — Landing',
+    description: '', role: 'Fullstack Developer @ KBTC Group of Companies', period: '',
+    tags: ['Landing Page'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://www.ivs.com.mm', source: '' },
+  },
+  {
+    title: 'Chili Thai Cuisine',
+    description: '', role: 'Fullstack Developer @ 20-Something Co.', period: '',
+    tags: ['Website'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://chilithaicuisine.com', source: '' },
+  },
+  {
+    title: 'Help Myanmar',
+    description: '', role: 'Fullstack Developer @ 20-Something Co.', period: '',
+    tags: ['Website'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://helpmyanmar.20-sth.com', source: '' },
+  },
+  {
+    title: 'ISR Website',
+    description: '', role: 'Fullstack Developer @ KBTC Group of Companies', period: '',
+    tags: ['Website'],
+    purpose: '',
+    stack: { backend: [], frontend: [], infra: [] },
+    features: [], metrics: [],
+    links: { live: 'https://isr.edu.mm', source: '' },
   },
 ]
 </script>
