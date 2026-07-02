@@ -3,10 +3,11 @@
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <h3 class="text-xl font-mono font-bold mb-4"><span class="text-gray-400">~/</span>kh_thant</h3>
+          <h3 class="text-xl font-mono font-bold mb-4"><span class="text-gray-400">~/</span>K_</h3>
           <p class="text-gray-400 mb-4">Full Stack Developer passionate about creating amazing web experiences.</p>
           <p class="text-gray-400 font-mono text-sm">email: <a href="mailto:kaunghtunthant@gmail.com" class="text-white hover:underline">kaunghtunthant@gmail.com</a></p>
-          <p class="text-gray-400 font-mono text-sm mt-1">phone: <a href="tel:+971555762591" class="text-white hover:underline">+971 55 576 2591</a></p>
+          <p class="text-gray-400 font-mono text-sm mt-1 mb-4">phone: <a href="tel:+971555762591" class="text-white hover:underline">+971 55 576 2591</a></p>
+          <SocialLinks variant="footer" />
         </div>
         <div>
           <h3 class="text-lg font-mono font-bold mb-4">quick_links</h3>

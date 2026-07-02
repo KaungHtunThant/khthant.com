@@ -3,8 +3,7 @@
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <span class="text-xl font-mono font-bold tracking-tight">
-          <span class="text-gray-500 dark:text-gray-500">~/</span>kh_thant
-        </span>
+          <span class="text-gray-500 dark:text-gray-500">~/</span>K_</span>
         <div class="flex items-center space-x-6">
           <ul class="hidden md:flex space-x-6 text-sm font-mono text-gray-500 dark:text-gray-400">
             <li v-for="link in navLinks" :key="link.id">

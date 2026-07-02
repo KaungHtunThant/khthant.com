@@ -22,23 +22,10 @@
 import { onMounted } from 'vue'
 
 const { initTheme } = useTheme()
+const { loadAnalytics } = useAnalytics()
 
 // Load gtag.js on the visitor's first interaction (with a timed fallback so
 // bounce visits are still counted) to keep analytics out of the initial load.
-let analyticsLoaded = false
-function loadAnalytics() {
-  if (analyticsLoaded) return
-  analyticsLoaded = true
-  window.dataLayer = window.dataLayer || []
-  function gtag() { window.dataLayer.push(arguments) }
-  gtag('js', new Date())
-  gtag('config', 'G-5E1JN7GFFB')
-  const s = document.createElement('script')
-  s.async = true
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5E1JN7GFFB'
-  document.head.appendChild(s)
-}
-
 onMounted(() => {
   initTheme()
   const events = ['pointerdown', 'scroll', 'keydown']

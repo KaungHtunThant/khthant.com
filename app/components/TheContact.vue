@@ -26,6 +26,8 @@
 <script setup>
 import { ref } from 'vue'
 
+const { trackEvent } = useAnalytics()
+
 const form = ref({
   name: '',
   email: '',
@@ -46,6 +48,7 @@ const handleSubmit = async () => {
     })
 
     submitStatus.value = 'success'
+    trackEvent('form_submit')
     form.value = { name: '', email: '', message: '' }
   } catch (error) {
     console.error('Error submitting form:', error)

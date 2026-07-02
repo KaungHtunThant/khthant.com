@@ -17,19 +17,19 @@
 <script setup>
 const services = [
   {
-    icon: '</>',
-    title: 'Web Design',
-    description: 'Creating beautiful, responsive designs that engage users and deliver great experiences across all devices.',
+    icon: '>_',
+    title: 'Full-Stack Product Delivery',
+    description: 'End-to-end ownership from database design to API to deployment — I take features from idea to production and keep them running.',
   },
   {
     icon: '{ }',
-    title: 'Web Development',
-    description: 'Building robust, scalable web applications using modern frameworks and technologies like Vue.js, Nuxt, and Node.js.',
+    title: 'Backend & API Architecture',
+    description: 'Laravel APIs built on SOLID principles with scalable, well-modeled schemas that hold up as the product and team grow.',
   },
   {
-    icon: '^',
-    title: 'Performance Optimization',
-    description: 'Optimizing applications for speed and efficiency, ensuring fast load times and smooth user interactions.',
+    icon: '#!',
+    title: 'Cloud & Infrastructure',
+    description: 'AWS EC2/S3, CI/CD pipelines, DNS/SSL, and backups — production infrastructure set up, secured, and maintained.',
   },
 ]
 </script>
