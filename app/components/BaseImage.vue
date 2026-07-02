@@ -23,8 +23,11 @@
     <img
       ref="imgEl"
       :src="src"
+      :srcset="srcset"
+      :sizes="sizes"
       :alt="alt"
       :loading="loading"
+      :fetchpriority="fetchpriority"
       decoding="async"
       class="h-full w-full transition-opacity duration-500"
       :class="[imgClass, loaded ? 'opacity-100' : 'opacity-0']"
@@ -39,11 +42,15 @@ import { ref, onMounted } from 'vue'
 
 defineProps({
   src: { type: String, required: true },
+  srcset: { type: String, default: undefined },
+  sizes: { type: String, default: undefined },
   alt: { type: String, default: '' },
   // Placeholder icon shown while loading: 'image' or 'user'
   icon: { type: String, default: 'image' },
   imgClass: { type: [String, Array, Object], default: '' },
+  // Above-the-fold (LCP) images should override these with eager/high.
   loading: { type: String, default: 'lazy' },
+  fetchpriority: { type: String, default: undefined },
 })
 
 const imgEl = ref(null)

@@ -23,7 +23,7 @@
           </nav>
         </div>
       </div>
-      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 font-mono text-sm">
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-mono text-sm">
         <p>&copy; 2026 Kaung Htun Thant. All rights reserved.</p>
       </div>
     </div>

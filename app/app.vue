@@ -23,9 +23,12 @@ import { onMounted } from 'vue'
 
 const { initTheme } = useTheme()
 
-// Load gtag.js once the browser is idle so analytics doesn't compete with
-// first paint. Pageviews still fire on every visit, just slightly later.
+// Load gtag.js on the visitor's first interaction (with a timed fallback so
+// bounce visits are still counted) to keep analytics out of the initial load.
+let analyticsLoaded = false
 function loadAnalytics() {
+  if (analyticsLoaded) return
+  analyticsLoaded = true
   window.dataLayer = window.dataLayer || []
   function gtag() { window.dataLayer.push(arguments) }
   gtag('js', new Date())
@@ -38,11 +41,9 @@ function loadAnalytics() {
 
 onMounted(() => {
   initTheme()
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadAnalytics, { timeout: 3000 })
-  } else {
-    setTimeout(loadAnalytics, 2000)
-  }
+  const events = ['pointerdown', 'scroll', 'keydown']
+  events.forEach((e) => window.addEventListener(e, loadAnalytics, { once: true, passive: true }))
+  setTimeout(loadAnalytics, 5000)
 })
 
 useSeoMeta({

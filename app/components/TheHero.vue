@@ -3,8 +3,12 @@
     <div class="container mx-auto px-6 text-center">
       <BaseImage
         src="/me-cv-grey-scale.webp"
+        srcset="/me-cv-grey-scale-224.webp 224w, /me-cv-grey-scale.webp 448w"
+        sizes="224px"
         alt="Portrait of Kaung Htun Thant, Full Stack Developer"
         icon="user"
+        loading="eager"
+        fetchpriority="high"
         class="w-56 h-56 rounded-full mx-auto mb-8 border-2 border-black dark:border-white"
         img-class="object-cover object-top"
       />

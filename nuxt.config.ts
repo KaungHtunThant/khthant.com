@@ -4,6 +4,17 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/fonts.css'],
+  routeRules: {
+    // Static HTML for the single page; /api/* stays a runtime function.
+    '/': { prerender: true },
+    '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    // Images keep their filenames when swapped, so revalidate weekly instead of
+    // immutable. Nitro route rules can't glob on extension, so list them.
+    '/me-cv-grey-scale.webp': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
+    '/me-cv-grey-scale-224.webp': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
+    '/portrait.webp': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
+    '/favicons/**': { headers: { 'cache-control': 'public, max-age=604800' } },
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
