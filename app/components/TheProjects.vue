@@ -35,6 +35,10 @@ const projects = [
     role: 'Senior Fullstack Developer @ Nokta Software Development',
     period: '2024 – Present',
     tags: ['Laravel', 'Vue.js', 'AWS'],
+    metrics: [
+      { value: '~60', label: 'daily active staff' },
+      { value: '2', label: 'countries served' },
+    ],
     purpose:
       'A custom CRM + EMR platform that replaced Bitrix and now serves ~60 simultaneous sales, admin, and clinic staff across the UAE and Turkey. Led end-to-end as project lead and business analyst — gathering requirements, prioritizing features, and shipping continuous updates under rapidly changing needs.',
     stack: {
@@ -56,6 +60,9 @@ const projects = [
     role: 'Backend Developer (Freelance) @ iDiamond',
     period: '2024 – 2025',
     tags: ['Laravel', 'AWS S3'],
+    metrics: [
+      { value: '5', label: 'payment methods' },
+    ],
     purpose:
       'A custom e-commerce backend built around a clean, SOLID MVC architecture. Designed the database schema and API routes, and delivered a production-ready v1 under shifting requirements while keeping the codebase stable and scalable.',
     stack: {
@@ -77,6 +84,10 @@ const projects = [
     role: 'Fullstack Developer @ Power Global Co., Ltd',
     period: '2023 – 2024',
     tags: ['Laravel', 'MySQL'],
+    metrics: [
+      { value: '10k+', label: 'attendees/day' },
+      { value: '3-day', label: 'live expos' },
+    ],
     purpose:
       "Myanmar's first Event Management System, deployed at major expos including Build & Agri Expo 2024 and Myanmar Textile Expo 2024 — handling 10,000+ attendees per day across 3-day events.",
     stack: {
@@ -98,6 +109,9 @@ const projects = [
     role: 'Fullstack Developer @ KBTC Group of Companies',
     period: '2021 – 2023',
     tags: ['Laravel', 'Azure AD'],
+    metrics: [
+      { value: '1,000+', label: 'students/term' },
+    ],
     purpose:
       "A complete School Management System built from scratch, onboarding 1,000+ new students per term across the group's schools and universities, with bulk XLSX/CSV import/export.",
     stack: {

@@ -8,6 +8,7 @@
     <main id="main">
       <TheHero />
       <TheAbout />
+      <TheMetrics />
       <TheSkills />
       <TheServices />
       <TheProjects />

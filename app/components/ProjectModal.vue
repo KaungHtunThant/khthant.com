@@ -13,6 +13,17 @@
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{{ project.purpose }}</p>
       </section>
 
+      <!-- Impact metrics -->
+      <section v-if="project.metrics?.length" class="mb-8">
+        <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-3">// impact</p>
+        <div class="flex flex-wrap gap-x-10 gap-y-4">
+          <div v-for="m in project.metrics" :key="m.label">
+            <p class="text-2xl font-bold font-mono">{{ m.value }}</p>
+            <p class="font-mono text-xs text-gray-500 dark:text-gray-400 mt-0.5">{{ m.label }}</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Stack breakdown -->
       <section v-if="stackGroups.length" class="mb-8">
         <p class="font-mono text-sm text-gray-500 dark:text-gray-500 mb-3">// stack</p>

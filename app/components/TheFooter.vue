@@ -4,7 +4,7 @@
       <div class="grid md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-xl font-mono font-bold mb-4"><span class="text-gray-400">~/</span>K_</h3>
-          <p class="text-gray-400 mb-4">Full Stack Developer passionate about creating amazing web experiences.</p>
+          <p class="text-gray-400 mb-4">Full Stack Developer — a bridge between messy requirements and clean, scalable code.</p>
           <p class="text-gray-400 font-mono text-sm">email: <a href="mailto:kaunghtunthant@gmail.com" class="text-white hover:underline">kaunghtunthant@gmail.com</a></p>
           <p class="text-gray-400 font-mono text-sm mt-1 mb-4">phone: <a href="tel:+971555762591" class="text-white hover:underline">+971 55 576 2591</a></p>
           <SocialLinks variant="footer" />
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-mono text-sm">
-        <p>&copy; 2026 Kaung Htun Thant. All rights reserved.</p>
+        <p>&copy; {{ year }} Kaung Htun Thant. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -33,4 +33,8 @@
 
 <script setup>
 const { navLinks, scrollToSection } = useSiteNavigation()
+
+// Baked at prerender via useState so server and client agree (no hydration
+// mismatch); refreshes to the current year on each deploy.
+const year = useState('copyright-year', () => new Date().getFullYear())
 </script>
